@@ -9,7 +9,7 @@
 \____/\___/ \___|_|\_\___|_|   
 
 <br>
-Just another naive locker for Linux
+Just another naive locker for *nix
 </pre>
 <br/>
 
@@ -26,6 +26,10 @@ Hence, I created a small, naive script that just adds the ability to change thos
 ## Dependencies
 
 Are you kidding me? It's written in Shell, no dependencies, enjoy.
+
+## Installation
+
+ - Clone the repo
 
 ## Credits
 
