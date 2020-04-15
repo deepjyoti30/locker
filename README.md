@@ -29,7 +29,29 @@ Are you kidding me? It's written in Shell, no dependencies, enjoy.
 
 ## Installation
 
- - Clone the repo
+- Clone the repo and enter the dir
+
+   ```git clone https://github.com/deepjyoti30/locker && cd locker```
+
+- Install using make
+
+   ```make install```
+
+## Usage
+
+```console
+Usage: locker OPERATION DIR [--help]
+
+Positional arguments:
+
+  OPERATION: Either of [lock] or [unlock] can be passed.
+  DIR: Directory to operate on.
+
+Optional arguments:
+
+  --help: Show this message and exit
+
+```
 
 ## Credits
 
