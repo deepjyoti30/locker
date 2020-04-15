@@ -14,7 +14,7 @@ show_help() {
     printf "\n\t--Developed by deepjyoti30, 2020\n"
 
     # Show help
-    printf "\nUsage: %s OPERATION DIR [--help]\n" "$0"
+    printf "\nUsage: locker OPERATION DIR [--help]\n"
     printf "\n"
 
     # Positional arguments
