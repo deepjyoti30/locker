@@ -7,6 +7,9 @@
  / /  / _ \ / __| |/ / _ \ '__|
 / /__| (_) | (__|   <  __/ |   
 \____/\___/ \___|_|\_\___|_|   
+
+<br>
+Just another naive locker for Linux
 </pre>
 </div>
 
