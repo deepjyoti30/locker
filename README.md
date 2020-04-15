@@ -11,6 +11,10 @@
 <br>
 Just another naive locker for Linux
 </pre>
+<br/>
+
+[![Made with Bash](https://img.shields.io/badge/Made%20with-Bash-red?style=for-the-badge)]() [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE.md)
+
 </div>
 
 ## Why this
