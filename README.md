@@ -1,7 +1,7 @@
 # Locker
 
 <div align="center">
-<pre style="background: none">
+<pre style="background: none !important;font-weight:bold!important;">
    __            _             
   / /  ___   ___| | _____ _ __ 
  / /  / _ \ / __| |/ / _ \ '__|
