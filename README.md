@@ -1,6 +1,8 @@
 # Locker
 
+<div align="center">
 <img src=".github/locker.gif">
+</div>
 
 <div align="center">
 <pre style="background: none !important;font-weight:bold!important;">
