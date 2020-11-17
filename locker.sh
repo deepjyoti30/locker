@@ -183,7 +183,8 @@ main() {
 
     # Get a passwd from the user
     printf "[*] Enter the password: "
-    read temp_pw
+    read -s temp_pw
+    printf "\n"
 
     # Check if to lock or unlock
     if [ $OP = "lock" ];then
