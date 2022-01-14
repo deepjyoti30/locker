@@ -35,7 +35,7 @@ get_lower() {
     # Check if arg passed
     if [ "$#" -ne 1 ]; then
         printf "[-] Error in get_lower! Exiting...!\n"
-        return -1
+        return 1
     fi
 
     echo "$(echo "$1" | tr '[:upper:]' '[:lower:]')"
@@ -56,7 +56,7 @@ get_store_loc() {
     dir_hash=$(get_hash $1)
 
     # Replace all the spaces with #
-    echo "$(tr ' ' '#' <<< "$dir_hash")"
+    echo "$(echo "$dir_hash" | tr ' ' '#')"
 }
 
 save_pw_hash() {
@@ -129,7 +129,7 @@ lock() {
         return 0
     else
         printf "[-] Directory couldn't be locked. SORRY!\n"
-        return -1
+        return 1
     fi
 }
 
@@ -141,7 +141,7 @@ unlock() {
 
     if [ "$status" = "1" ];then
         printf "[-] The password is wrong!.\n"
-        return -1
+        return 1
     fi
 
     unlock_dir $DIR
@@ -151,7 +151,7 @@ unlock() {
         printf "[*] The directory was unlocked succesfully!\n";
     else
         printf "[-] Something went wrong. SORRY!\n";
-        return -1
+        return 1
     fi
 
     remove_file
@@ -159,8 +159,6 @@ unlock() {
 }
 
 main() {
-    # Declare the possible operations available
-    possible_op=("lock", "unlock")
 
     # Show the passed values
     printf "[*] Passed OPERATION is: %s\n" "$(get_upper $OP)"
@@ -168,14 +166,27 @@ main() {
 
     # Check if the Operation passed is a valid one
     # If it's not exit and show reason
-    if $(echo ${possible_op[@]} | grep -q -w "$OP");then
+    case "$OP" in
+
+      # Declare the possible operations available
+      'lock' | 'unlock' )
+
         printf "[*] Passed OPERATION is valid.\n"
-    else
-        printf "[-] Passed OPERATION is not valid! Exitting...\n"   
-    fi
+
+      ;;
+
+      * )
+
+         printf "[-] Passed OPERATION is not valid! Exitting...\n"
+         exit 1
+
+      ;;
+
+
+    esac
 
     # Check if the passed directory is valid or not
-    if [ -d "$DIR" ];then
+    if [ -d "$DIR" ]; then
         printf "[*] Passed directory is valid....\n"
     else
         printf "[-] Passed directory is not valid...\n"
@@ -183,7 +194,9 @@ main() {
 
     # Get a passwd from the user
     printf "[*] Enter the password: "
-    read -s temp_pw
+    stty -echo
+    IFS= read -r temp_pw
+    stty echo
     printf "\n"
 
     # Check if to lock or unlock
